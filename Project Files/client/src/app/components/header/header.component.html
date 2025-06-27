@@ -1,0 +1,91 @@
+<!-- USER NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light d-flex align-items-center justify-content-between w-100" *ngIf="!isAdmin">
+  <img routerLink="/home" src="assets/imm.jpg" class="image-logo" alt="logo">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item w-100">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Home
+        </a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-flex align-items-center justify-content-between position-relative" routerLink="/my-cart" routerLinkActive="active">
+          <span>MyCart</span>
+          <span *ngIf="cartCount > 0" class="badge bg-success position-absolute top-0 start-100 translate-middle rounded-circle"
+                style="height: 22px; width: 22px; font-size: 12px; display: flex; align-items: center; justify-content: center;">
+            {{ cartCount }}
+          </span>
+        </a>
+      </li>
+      <li class="nav-item w-100 dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/login" *ngIf="!token">SignIn/SignUp</a>
+          <a class="dropdown-item" routerLink="/my-orders">My Orders</a>
+          <a class="dropdown-item" routerLink="/history">History</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <!-- 🔓 Logout button -->
+    <button class="btn btn-outline-danger ms-auto" *ngIf="token" (click)="onLogout()">Logout</button>
+  </div>
+</nav>
+
+<!-- ADMIN NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light d-flex flex-row justify-content-between" *ngIf="isAdmin">
+  <img routerLink="/admin/dashboard" src="assets/imm.jpg" class="image-logo" alt="logo">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto d-flex align-items-center justify-content-between w-100">
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/products" routerLinkActive="active">Products</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/add-products" routerLinkActive="active">Add Products</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/add-categories" routerLinkActive="active">Add Categories</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/feedback" routerLinkActive="active">Feedback</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link d-lg-none" routerLink="/admin/payment" routerLinkActive="active">Payment</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <!-- 🔓 Admin Logout -->
+    <button class="btn btn-outline-danger ms-auto" (click)="onLogout()">Logout</button>
+  </div>
+</nav>

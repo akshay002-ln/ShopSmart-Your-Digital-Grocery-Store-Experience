@@ -1,0 +1,83 @@
+.cartlist-container {
+  min-height: 90vh;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+/* Loader Styling */
+.loader-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty cart image */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.img-fluid:hover {
+  transform: scale(1.02);
+}
+
+/* Card styling for cart items */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Product image inside card */
+.card-img-top {
+  object-fit: contain;
+  max-height: 200px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+
+/* Buttons */
+.btn {
+  border-radius: 12px;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 768px) {
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .img-fluid {
+    width: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+.update-add-product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.card {
+  width: 50%;
+}
+
+.back-button {
+  width: 50%;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+
+  .back-button {
+    width: 90%;
+  }
+}
+
+.loader-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-message-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-message {
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.text-success {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+button.btn {
+  margin: 0.5rem;
+}

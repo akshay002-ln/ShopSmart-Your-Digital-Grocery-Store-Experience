@@ -1,0 +1,15 @@
+.home-container{
+    height: 90vh;
+    overflow: auto;
+}
+.home-section{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width:768px) {
+    .home-section{
+        flex-direction: column;
+    }
+}

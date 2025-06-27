@@ -1,0 +1,60 @@
+<div class="loader-container w-100" *ngIf="isLoading">
+  <app-loader-spinner></app-loader-spinner>
+</div>
+
+<div class="cartlist-container bg-light text-dark" *ngIf="!isLoading">
+  <h1 class="text-center mt-4 mb-4">
+    <i class="fa fa-shopping-cart"></i> My Cart
+  </h1>
+
+  <!-- If Cart is Empty -->
+  <div class="container" *ngIf="cartList.length === 0">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <img
+          src="https://img.freepik.com/free-vector/black-friday-concept-illustration_114360-3667.jpg"
+          alt="No Cart Items"
+          class="img-fluid"
+        />
+        <h3 class="mt-3 text-muted font-weight-bold">No Cart Items</h3>
+        <p class="text-secondary">Your cart is empty. Start shopping now!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- If Cart Has Items -->
+  <div class="row justify-content-start px-4" *ngIf="cartList.length > 0">
+    <div class="col-md-4 mb-4" *ngFor="let item of cartList">
+      <div class="card shadow-sm h-100 border-0">
+        <img
+            [src]="item.image"
+            [alt]="item.productname"
+            class="card-img-top cart-product-img"
+            routerLink="/product-details/{{ item._id }}"
+          />
+
+
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ item.productname }}</h5>
+          <p class="card-text text-muted">Price: ₹{{ item.price }}</p>
+
+          <div class="d-flex justify-content-center gap-2">
+            <button
+              class="btn btn-outline-primary flex-fill"
+              routerLink="/place-order/{{ item._id }}"
+            >
+              Buy this product
+            </button>
+            <button
+              class="btn btn-outline-danger"
+              (click)="onRemove(item._id)"
+              title="Remove from cart"
+            >
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

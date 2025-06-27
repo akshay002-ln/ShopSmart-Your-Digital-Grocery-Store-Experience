@@ -1,0 +1,38 @@
+<div class="home-container">
+
+  <!-- 🏠 Main Welcome Section -->
+  <section class="home-section py-5">
+    <div class="container text-center">
+
+      <!-- 🖼️ Centered Image -->
+      <div class="mb-5">
+        <img src="assets/im5.jpg"
+             class="img-fluid rounded shadow"
+             style="max-width: 900px; width: 100%; height: auto;"
+             alt="Grocery Store">
+      </div>
+
+      <!-- 📝 Welcome Text -->
+      <h1 class="display-4 fw-bold text-dark mb-3">
+        Welcome to <span class="text-success">ShopSmart</span>
+      </h1>
+      <p class="lead text-secondary mb-4">
+        Your Digital Grocery Store Experience
+      </p>
+      <p class="fs-5 text-muted mb-5">
+        Discover a wide range of fresh and quality groceries to meet all your culinary needs.
+        From farm-fresh produce to pantry essentials, we have everything you need to create
+        delicious meals and snacks for your family.
+      </p>
+
+      <!-- 🚀 Start Shopping Button -->
+      <button class="btn btn-primary btn-lg px-5 py-3" (click)="onShop()">
+        Start Shopping
+      </button>
+
+    </div>
+  </section>
+
+  <!-- 📦 Footer Component -->
+  <app-footer></app-footer>
+</div>
