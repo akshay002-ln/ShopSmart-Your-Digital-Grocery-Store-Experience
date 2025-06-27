@@ -93,14 +93,6 @@ Then run Angular (`ng serve`) and Node.js (`node src/app.js`) in separate termin
 
 ---
 
-# Developer Info
-
-- **Developer Name**: Akshay Chatla  
-- **Team ID**: LTVIP2025TMID54969  
-- **Email**: akshaychatla99@gmail.com
-
----
-
 # License
 
 This project is for educational/demonstration purposes only.
